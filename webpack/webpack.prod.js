@@ -74,7 +74,15 @@ module.exports = merge(webpackDll, {
                         }
                     }
                 ]
-            }
+            },
+            { //字体文件
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'url-loader',
+                options: {
+                    name: "[name][hash].[ext]",
+                    outputPath: './fonts'
+                }
+            },
         ],
     },
     plugins: [

@@ -47,6 +47,14 @@ module.exports = merge(webpackDll, {
                     'sass-loader'
                 ]
             },
+            { //字体文件
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'url-loader',
+                options: {
+                    name: "[name].[ext]",
+                    outputPath: './fonts'
+                }
+            },
             {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [

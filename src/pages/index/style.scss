@@ -1,2 +1,27 @@
-.index{ text-align: center;}
-.card{ width: 300px; margin:20px auto;}
+#index {
+    text-align: center;
+    .text {
+        margin: 20px;
+        font-size: 18px;
+    }
+    
+    .index-icon {
+        font-size: 150px;
+        color: rgb(0, 100, 107);
+    }
+    
+    .Rotation {
+        animation: rotation 3s linear infinite;
+    }
+    
+    @keyframes rotation {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+    
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}
+
