@@ -8,7 +8,8 @@ const config = {
     output: {
         filename: 'js/[name]-[hash].js',
         chunkFilename: 'js/[name].[hash:8].js',
-        path: path.resolve(__dirname, '..', 'dist')// __dirname 相对于当前文件位置
+        path: path.resolve(__dirname, '..', 'dist'),// __dirname 相对于当前文件位置
+        publicPath:'/'
     },
     plugins: [
         new WebpackBar(),

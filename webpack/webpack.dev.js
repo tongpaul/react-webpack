@@ -3,6 +3,7 @@ const path = require('path')
 const webpackDll = require('./webpack.dll');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const port = process.env.PORT
 module.exports = merge(webpackDll, {
     mode: 'development',
     devtool: 'source-map',
@@ -69,10 +70,11 @@ module.exports = merge(webpackDll, {
         })
     ],
     devServer: { //测试服务启动
+        port,
         contentBase: path.resolve(__dirname, 'dist'),
         compress: true,
-        port: 5000,
         overlay: true,
-        quiet: true
+        quiet: true,
+        historyApiFallback: true,
     }
 })
