@@ -25,13 +25,6 @@ module.exports = merge(webpackDll, {
     module: {
         rules: [
             {
-                test: /\.m?js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                }
-            },
-            {
                 test: /\.css$/,
                 use: [
                     'style-loader',
@@ -45,27 +38,6 @@ module.exports = merge(webpackDll, {
                     'style-loader',
                     'css-loader',
                     'sass-loader'
-                ]
-            },
-            { //字体文件
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
-                loader: 'url-loader',
-                options: {
-                    name: "[name].[ext]",
-                    outputPath: './fonts'
-                }
-            },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192,
-                            name: '[name][hash].[ext]',
-                            outputPath: 'image/'
-                        }
-                    }
                 ]
             }
         ],

@@ -12,12 +12,12 @@ const routes = [
       {
         path: '/index',
         exact: true,
-        component: dynamic(import('../pages/index/index'))
+        component: dynamic(import('../pages/index/index.jsx'))
       },
       {
         path: '/about',
         exact: true,
-        component: dynamic(import('../pages/about/index'))
+        component: dynamic(import('../pages/about/index.jsx'))
       },
       { path: '*', component: NotFound }
     ]
