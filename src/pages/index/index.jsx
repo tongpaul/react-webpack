@@ -17,7 +17,6 @@ const Index = () => {
             <div className="text">
                 hello world
             </div>
-            <Button variant="contained" color="primary" onClick={handleAbout}>关于</Button>
         </div>
     )
 }

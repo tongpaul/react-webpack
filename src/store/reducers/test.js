@@ -1,5 +1,5 @@
-import { INIT_LIST_ITEM } from '../types'//默认数据
-const defaultState = [1, 2, 3, 4, 5, 6]
+import { INIT_LIST_ITEM, DETAIL_ITEM } from '../actions/test'//默认数据
+const defaultState = []
 
 const test = (state = defaultState, action) => {
     let newStats = {}
@@ -11,4 +11,5 @@ const test = (state = defaultState, action) => {
             return state;
     }
 };
+
 export { test }

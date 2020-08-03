@@ -1,22 +1,33 @@
-import React, { useState } from 'react'
-import Button from '@material-ui/core/Button';
+import React from 'react'
+import { Button, List, ListItem, ListItemText } from '@material-ui/core';
 import { connect } from 'react-redux'
 import { initListActionSaga } from '../../store/actions/test'
-
 const About = (props) => {
     return (
         <div id="about">
-            <Button variant="outlined" color="primary" onClick={props.initListSaga}>
-                打开提示窗
+            <Button variant="outlined" color="primary" onClick={() => props.initListSaga(props.list)}>
+                查看列表
             </Button>
-            {props.detail.map((value)=>(
-                <div key={value}>{value}</div>
-            ))}
+            <div className='list-box'>
+                <List component="nav" aria-label="secondary mailbox folders">
+                    {props.list.map((value) => (
+                        <ListItem button key={value.name}>
+                            <ListItemText primary={value.name} />
+                        </ListItem>
+                    ))}
+
+                </List>
+            </div>
+
         </div>
     )
 }
 
-const mapStateToProps = state => { return { detail: state.test } }
+const mapStateToProps = state => {
+    return {
+        list: state.test,
+    }
+}
 export default connect(
     mapStateToProps,
     initListActionSaga)(About)

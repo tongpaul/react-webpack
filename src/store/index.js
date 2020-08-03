@@ -7,6 +7,7 @@ import rootSaga from './sagas/index';
 const composeTools = composeWithDevTools({})
 
 const sagaMiddleware = createSagaMiddleware()
+
 // 使用数组是为了方便以后继续添加中间件
 const middlewares = [sagaMiddleware];
 
