@@ -15,6 +15,11 @@ const routes = [
         component: dynamic(import('../pages/index/index.jsx'))
       },
       {
+        path: '/list',
+        exact: true,
+        component: dynamic(import('../pages/list/index.jsx'))
+      },
+      {
         path: '/about',
         exact: true,
         component: dynamic(import('../pages/about/index.jsx'))

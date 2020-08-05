@@ -12,6 +12,7 @@ class IndexLayout extends Component {
       <>
         <div className="nav">
           <Button className="button" onClick={() => this.handleOpen('/')}>首页</Button>
+          <Button className="button" onClick={() => this.handleOpen('/list')}>列表</Button>
           <Button className="button" onClick={() => this.handleOpen('/about')}>关于</Button>
         </div>
         <Switch>

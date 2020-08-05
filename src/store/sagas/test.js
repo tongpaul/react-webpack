@@ -1,9 +1,10 @@
-import { put, takeEvery } from 'redux-saga/effects'
+import { put, call, takeEvery } from 'redux-saga/effects'
 import { INIT_LIST_ITEM_SAGA, INIT_LIST_ITEM } from '../actions/test'
+import { getlist } from '../../server/test'
 
-
-function* getListFun() {
-    yield put({ type: INIT_LIST_ITEM, list: [{ name: 'hello world'},{ name: '你好 世界'}] })
+function* getListFun(data) {
+    const res = yield call(getlist, data.paylaod)
+    yield put({ type: INIT_LIST_ITEM, list: res.data })
 }
 
 function* mySaga() {

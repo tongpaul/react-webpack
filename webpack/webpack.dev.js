@@ -1,8 +1,8 @@
 const { merge } = require('webpack-merge');
 const path = require('path')
 const webpackDll = require('./webpack.dll');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const configProxy = require('./config.proxy.dev')
 const port = process.env.PORT
 module.exports = merge(webpackDll, {
     mode: 'development',
@@ -56,5 +56,6 @@ module.exports = merge(webpackDll, {
         overlay: true,
         quiet: true,
         historyApiFallback: true,
+        proxy: configProxy
     }
 })
